@@ -1,8 +1,7 @@
 <template>
   <div class="pad">
-    <input type="text" class="pad__title" placeholder="Title">
-    <textarea class="pad__content" placeholder="Note">
-    </textarea>
+    <input type="text" class="pad__title" placeholder="Title" v-model="note.title">
+    <textarea class="pad__content" placeholder="Note" v-model="note.body"></textarea>
     <footer class="pad__footer">
       <ul class="pad__footer-items">
         <li class="pad__footer-item">Words: 100</li>
@@ -13,7 +12,15 @@
 </template>
 
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapGetters([
+        'note'
+      ])
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -65,7 +72,7 @@
   .pad__footer-item {
     flex: 1;
     font-size: .8em;
-    
+
     &--right {
       margin-left: auto;
       text-align: right;
