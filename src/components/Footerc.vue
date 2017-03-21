@@ -2,7 +2,7 @@
 <footer class="footer">
   <ul class="footer-items">
     <li class="footer-item">Words: {{ countWords }}</li>
-    <li class="footer-item">Chars: {{ countChars }}</li>
+    <li class="footer-item footer-item--center">Chars: {{ countChars }}</li>
     <li class="footer-item footer-item--right">Last saved: {{ lastSaved }}</li>
   </ul>
 </footer>
@@ -38,6 +38,11 @@ export default {
     &-item {
         flex: 1;
         font-size: 0.8em;
+
+        &--center {
+            margin-left: auto;
+            text-align: center;
+        }
 
         &--right {
             margin-left: auto;

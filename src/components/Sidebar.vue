@@ -1,18 +1,22 @@
 <template>
 <div class="sidebar">
+  <div class="sidebar__content">
+    <a href="#" v-on:click.prevent="newNote">New note</a>
+  </div>
   <div v-if="notes.length">
     <note v-for="(note, key, index) in notes" :note="note" :key="index"></note>
   </div>
-  <div v-else class="sidebar__content">
+  <!-- <div v-else class="sidebar__content">
     No notes
-  </div>
+  </div> -->
 </div>
 </template>
 
 <script>
 import Note from './Note'
 import {
-  mapGetters
+  mapGetters,
+  mapActions
 } from 'vuex'
 
 export default {
@@ -22,6 +26,11 @@ export default {
   computed: {
     ...mapGetters([
       'notes'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'newNote'
     ])
   }
 }

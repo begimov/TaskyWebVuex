@@ -45,7 +45,7 @@ export default {
     flex-direction: column;
 
     &__title {
-        width: 100%;
+        max-width: 100%;
         border: 0;
         font:inherit {
             size: 1.6em;
@@ -56,7 +56,7 @@ export default {
 
     &__content {
         flex: 1;
-        width: 100%;
+        max-width: 100%;
         margin: 0;
         border: 0;
         font: inherit;
