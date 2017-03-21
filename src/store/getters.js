@@ -12,3 +12,24 @@ export const lastSaved = state => {
   }
   return moment(state.note.lastSaved).calendar()
 }
+
+export const countWords = state => {
+  const body = state.note.body
+  if (body) {
+    const count = body.trim().split(/\s{1,}/).reduce((acc, elem) => {
+      return elem
+        ? ++acc
+        : acc
+    }, 0)
+    return count
+  }
+  return 0
+}
+
+export const countChars = state => {
+  const body = state.note.body
+  if (body) {
+    return body.length
+  }
+  return 0
+}

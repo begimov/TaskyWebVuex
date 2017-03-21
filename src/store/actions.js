@@ -1,6 +1,6 @@
 import * as mutations from './mutation-types'
 
-export const saveNote = ({ commit, dispatch, state }) => {
+export const saveNote = ({commit, dispatch, state}) => {
   commit(mutations.TOUCH_LAST_SAVED)
   if (state.note.id === null) {
     commit(mutations.SET_CURRENT_NOTE_ID, Date.now())
@@ -9,7 +9,7 @@ export const saveNote = ({ commit, dispatch, state }) => {
   // TODO store notes
 }
 
-export const startSaveTimeout = ({ commit, dispatch, state }) => {
+export const startSaveTimeout = ({commit, dispatch, state}) => {
   if (state.saveTimeOut !== null) {
     return
   }
@@ -22,6 +22,6 @@ export const startSaveTimeout = ({ commit, dispatch, state }) => {
   })
 }
 
-export const stopSaveTimeout = ({ commit, dispatch, state }) => {
+export const stopSaveTimeout = ({commit, dispatch, state}) => {
   commit(mutations.CLEAR_SAVE_TIMEOUT)
 }
